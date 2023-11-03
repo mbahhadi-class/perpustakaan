@@ -1,0 +1,20 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3308/perpus
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  jackson:
+    time-zone: Asia/Jakarta
+  banner:
+    location: banner.txt
+
+jwt:
+  secret: nvnseuihdsfkj$631qkljnkdszajnfvcslkbaf
