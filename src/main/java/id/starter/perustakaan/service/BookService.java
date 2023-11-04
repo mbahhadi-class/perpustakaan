@@ -1,10 +1,13 @@
 package id.starter.perustakaan.service;
 
+import id.starter.perustakaan.common.RestResult;
 import id.starter.perustakaan.dao.BaseDao;
 import id.starter.perustakaan.dao.BookDao;
 import id.starter.perustakaan.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Author "Noverry Ambo"
@@ -18,5 +21,16 @@ public class BookService extends BaseService<Book> {
     @Override
     protected BaseDao<Book> getDAO() {
         return dao;
+    }
+
+    public Book saveBooks(Book params){
+
+        long check = dao.count(params);
+
+        if (check > 0 ){
+            return null;
+        }
+
+        return dao.saveBooks(params);
     }
 }

@@ -39,7 +39,8 @@ public class BookController extends BaseController {
     @PreAuthorize("permitAll()")
     @PostMapping
     public RestResult save(@RequestBody Book param){
-        param = service.save(param);
+//        param = service.save(param);
+        param = service.saveBooks(param);
         return new RestResult(param, param != null ? StatusCode.SAVE_SUCCESS : StatusCode.SAVE_FAILED);
     }
 
